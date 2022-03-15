@@ -14,7 +14,7 @@ const TodosList = ({ todos }: any) => {
     todos.length &&
     todos.map(({ title, body, id, userId }: any, i: number) => (
       <Grid item xs={3}>
-        <Card key={id} sx={{ maxWidth: 345, height: 250 }}>
+        <Card key={id * i + 1} sx={{ maxWidth: 345, height: 250 }}>
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
               {title}
