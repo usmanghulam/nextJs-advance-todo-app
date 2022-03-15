@@ -1,6 +1,7 @@
 import { HYDRATE, createWrapper } from "next-redux-wrapper";
 import { createStore, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
+import thunk from 'redux-thunk'
 
 import { rootReducer } from "./rootReducer";
 
@@ -22,4 +23,4 @@ const reducer = (state: any, action: any) => {
   return rootReducer(state, action);
 };
 
-export const wrapper = createWrapper(() => createStore(reducer, bindMiddleware([])), { debug: true });
+export const wrapper = createWrapper(() => createStore(reducer, bindMiddleware([thunk])), { debug: true });
